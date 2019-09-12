@@ -8,10 +8,12 @@
 
 #include <stddef.h>
 #include <glob.h>
-typedef enum {false, true} bool;
 
-typedef enum
-{
+typedef enum {
+    false, true
+} bool;
+
+typedef enum {
     E_OK,
     E_NULL_PTR,
     E_UNDERFLOW,
@@ -19,21 +21,24 @@ typedef enum
     E_BAD_INDEX
 } ErrorCode;
 
+typedef enum {
+    E_RIGHT, E_LEFT
+} Direction;
+
 typedef struct Vector Vector;
 
-struct Vector{
-    int* m_arr;
-    size_t m_capacity;
-    size_t m_size;
-    };
 
-Vector* vectorCreate(size_t size);
+int *getArr(const Vector *vector);
+
+size_t getCapacity(const Vector *vector);
+
+size_t getSize(const Vector *vector);
+
+Vector *vectorCreate(size_t size);
 
 void vectorDestroy(Vector **vector);
 
-bool isFull(const Vector* vector);
-
-bool isEmpty(const Vector* vector);
+ErrorCode resizeVector(Vector* vector);
 
 /* Adds an item at the end. Grows if needed (by * 2) */
 ErrorCode vectorPush(Vector *vector, int value);
@@ -58,7 +63,18 @@ size_t vectorGetCapacity(const Vector *vector);
 /* Counts how many instances of a given value there are */
 size_t vectorCount(const Vector *vector, int value);
 
+bool isFull(const Vector *vector);
+
+bool isEmpty(const Vector *vector);
+
+ErrorCode shiftVector(Vector *vector, size_t index, Direction direction );
+
+void shiftRightVector(Vector *vector, size_t index);
+
+void shiftLeftVector(Vector *vector, size_t index);
+
 void printVector(const Vector *vector);
+
 #ifdef _DEBUG
 void vectorPrint(Vector *vector);
 #endif /* _DEBUG */

@@ -24,7 +24,7 @@ clean:
 	rm -f $(OBJS) $(TARGET) .depends
 
 run: $(TARGET)
-	./$(TARGET)
+	valgrind --leak-check=full ./$(TARGET)
 
 # Do not forget to add '-g' to CFLAGS
 gdb: $(TARGET)

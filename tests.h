@@ -6,6 +6,11 @@
 #define VECTOR_TASK_TESTS_H
 #include "VectorInt.h"
 
-void test();
+void vectorCreate_test();
+void vectorPush_test();
+void vectorInsert_test();
+void vectorPop_test();
+void vectorRemove_test();
 
+void test_temp();
 #endif /* VECTOR_TASK_TESTS_H */

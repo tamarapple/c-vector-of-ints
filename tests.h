@@ -1,8 +1,11 @@
-//
-// Created by tamarapple on 9/11/19.
-//
+
+/* Created by tamarapple on 9/11/19 */
+
 
 #ifndef VECTOR_TASK_TESTS_H
 #define VECTOR_TASK_TESTS_H
+#include "VectorInt.h"
 
-#endif //VECTOR_TASK_TESTS_H
+void test();
+
+#endif /* VECTOR_TASK_TESTS_H */

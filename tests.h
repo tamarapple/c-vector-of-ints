@@ -11,6 +11,8 @@ void vectorPush_test();
 void vectorInsert_test();
 void vectorPop_test();
 void vectorRemove_test();
+void vectorGetAndVectorSetElement_test();
+void vectorCount_test();
 
-void test_temp();
+void vector_test_temp();
 #endif /* VECTOR_TASK_TESTS_H */
